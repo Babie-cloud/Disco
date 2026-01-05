@@ -1,0 +1,150 @@
+// -----------------------------------------
+// _fine-theme.scss
+
+// Description: Définit les couleurs du thème pour fineplan-frontend (clair et sombre)
+// Utilisation: Importé dans main.scss ou styles.scss
+
+// 1. Variables globales pour la palette de couleurs
+$primary: #8e44ad;          // Couleur primaire verte (inspirée de l'image)
+$primary-1: #d3b8e6;        // Variante claire du vert pour titres/textes
+$primary-2: #4A2C5A;        // Variante foncée du vert pour mode sombre
+$primary-3: #cffced;        // Variante intermédiaire
+$white : #ffffff;           //texte blanc
+$primary-light: #8f67ac;    // Variante claire (hover)
+$primary-dark: #6a0dad;     // Variante foncée (active)(pour les buttons)
+$secondary: #000000;        // Couleur secondaire noire
+$accent: #C5E1A5;           // Couleur d'accent (vert clair pour fonds subtils)
+$background-light: #eeebebf3; // Fond mode clair
+$background-dark: #424242;  // Fond mode sombre
+$text-light: #000000;       // Texte mode clair
+$text-dark: #FFFFFF;        // Texte mode sombre
+$success: #2E7D32;          // Réutilisé comme vert principal
+$info: #0288D1;             // Bleu pour info
+$danger: #D32F2F;           // Rouge pour danger
+$warning: #F9A825;          // Jaune pour avertissement
+
+// 2. Variables pour les bordures et ombres
+$border-light: #E0E0E0;     // Bordure mode clair
+$border-dark: #424242;      // Bordure mode sombre
+$shadow-light: rgba(0, 0, 0, 0.1); // Ombre mode clair
+$shadow-dark: rgba(0, 0, 0, 0.3);  // Ombre mode sombre
+
+// 3. SCSS custom properties pour le thème clair
+:root, [data-theme="light"] {
+  --primary: #{$primary};
+  --primary-1: #{$primary-1};
+  --primary-2: #{$primary-2};
+  --primary-3: #{$primary-3};
+  --primary-light: #{$primary-light};
+  --primary-dark: #{$primary-dark};
+  --secondary: #{$secondary};
+  --accent: #{$accent};
+  --background: #{$background-light};
+  --text: #{$text-light};
+  --border: #{$border-light};
+  --shadow: #{$shadow-light};
+  --success: #{$success};
+  --info: #{$info};
+  --danger: #{$danger};
+  --warning: #{$warning};
+}
+
+// 4. SCSS custom properties pour le thème sombre
+[data-theme="dark"] {
+  --primary: #{$primary-2};
+  --primary-1: #{$primary-1};
+  --primary-2: #{$primary-2};
+  --primary-3: #{$primary-3};
+  --primary-light: #{$primary-light};
+  --primary-dark: #{$primary-2};
+  --secondary: #{$secondary};
+  --accent: #{$accent};
+  --background: #{$background-dark};
+  --text: #{$text-dark};
+  --border: #{$border-dark};
+  --shadow: #{$shadow-dark};
+  --success: #{$success};
+  --info: #{$info};
+  --danger: #{$danger};
+  --warning: #{$warning};
+}
+
+// 5. Classes utilitaires pour les couleurs et styles
+.primary-bg {
+  background-color: var(--primary);
+  color: var(--text);
+}
+.bg-dark {
+  color: var(--background-dark);
+}
+body {
+  background-color: var(--background);
+  color: var(--text);
+  transition: all 0.3s ease; 
+}
+
+// .primary-bg-semi {
+//   background-color:#1B5E20; 
+ 
+// }
+
+.primary-text {
+  color: var(--primary);
+}
+
+.secondary-text {
+  color: var(--secondary);
+}
+
+.secondary-bg {
+  background-color: var(--secondary);
+  color: var(--text);
+}
+// .bg-grey {
+//    background-color: #1b5e1f8c!important;
+// }
+.bg-secondary {
+  background-color: #838383!important;
+}
+
+.accent-bg {
+  background-color: var(--accent);
+  color: var(--text);
+}
+
+.text-color {
+  color: var(--primary); 
+}
+.text-color-1 {
+  color: var(--primary-1);
+}
+.text-color-2 {
+  color: var(--primary-2); 
+}
+.text-color-3 {
+  color: var(--primary-3); 
+}
+
+.background {
+  background-color: var(--background);
+}
+
+.transparent-bg {
+  background-color: transparent !important; 
+} 
+.btn-primary {
+  color: var(--primary) !important;
+}
+.border-primary {
+  border-color: var(--primary) !important;
+}
+.border-primary-1 {
+  border-color: var(--primary-1) !important;
+}
+.border-primary-2 {
+  border-color: var(--primary-2) !important;
+}
+.border-primary-3 {
+
+  border-color: var(--primary-3) !important; 
+}

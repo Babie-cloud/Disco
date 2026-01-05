@@ -1,0 +1,26 @@
+:root {
+  --color-prune: #432c58;
+  --color-corail: #ff6b6b;
+  --color-creme: #fbe8c8;
+  --color-gris: #2d2d2d;
+  --color-menthe: #a8dbc7;
+
+  --bg-color: #ffffff;
+  --text-color: #000000;
+}
+
+[data-theme="dark"] {
+  --bg-color: var(--color-gris);
+  --text-color: #f1f1f1;
+}
+
+[data-theme="light"] {
+  --bg-color: #fdfdfd;
+  --text-color: #1a1a1a;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Segoe UI', sans-serif;
+}
