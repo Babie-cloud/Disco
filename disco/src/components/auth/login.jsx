@@ -5,8 +5,9 @@ import { FaFacebookF } from "react-icons/fa";
 import "../../../public/styles/Auth.scss";
 
 
-import ThemeToggle from "../../../public/styles/ThemeToggle";
-import AuthLayout from "./AuthLayout"; const Login = () => {
+// import ThemeToggle from "../../../public/styles/ThemeToggle";
+// import AuthLayout from "./AuthLayout"; 
+const Login = () => {
   return (
    <div className="auth-page">
   <div className="bubble bubble-1" />
