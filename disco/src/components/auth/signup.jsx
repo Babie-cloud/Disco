@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import AuthLayout from "./AuthLayout";
-import ThemeToggle from "../../../public/styles/ThemeToggle"; 
-import defaultAvatar from "/images/image_copy.png";
+import ThemeToggle from "../ThemeToggle"; 
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebook, FaTwitter } from "react-icons/fa";
-import "../../../public/styles/Signup.scss";
 
 const Signup = () => {
   const [step, setStep] = useState(1);
@@ -124,7 +122,7 @@ const Signup = () => {
               <label className="block text-sm font-medium">Profile Image</label>
               <div className="relative w-24 h-24">
                 <img 
-                  src={formData.profileImage ? URL.createObjectURL(formData.profileImage) : defaultAvatar} 
+                  src={formData.profileImage ? URL.createObjectURL(formData.profileImage) : "/images/image_copy.png"} 
                   alt="Profile" 
                   className="w-full h-full rounded-full object-cover border"
                 />

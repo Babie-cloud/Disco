@@ -2,15 +2,16 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBook, faLightbulb, faGlobe } from "@fortawesome/free-solid-svg-icons";
-// Si tes images sont dans public/, utilise simplement le chemin relatif au serveur :
+import ThemeToggle from "../ThemeToggle"; 
+
 const studentImg = "/images/student.png";
 const missionImg = "/images/image.png";
-import ThemeToggle from "../../../public/styles/ThemeToggle"; 
+// import ThemeToggle from "../../../public/styles/ThemeToggle"; 
 
 const LandingPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-creme to-menthe/30 flex flex-col">
-      
+
       {/* Header */}
       <header className="bg-prune text-white px-6 py-4 shadow-lg sticky top-0 z-50">
         <div className="max-w-7xl mx-auto flex justify-between items-center">

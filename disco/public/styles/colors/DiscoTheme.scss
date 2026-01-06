@@ -1,0 +1,90 @@
+// src/styles/abstracts/_theme.scss
+
+:root {
+  // Palette principale Disco
+  --prune: #432c58;
+  --corail: #ff6b6b;
+  --creme: #fbe8c8;
+  --gris: #2d2d2d;
+  --menthe: #a8dbc7;
+
+  // Dérivés pour le design (opacité et variantes)
+  --prune-light: #5a3d75;
+  --creme-soft: #fff9f0;
+  --white: #ffffff;
+  --shadow-color: rgba(67, 44, 88, 0.1);
+
+  // Couleurs sémantiques par défaut (Light Mode)
+  --bg-app: var(--creme-soft);
+  --bg-card: var(--white);
+  --text-main: var(--gris);
+  --text-muted: #666666;
+  --border-color: rgba(67, 44, 88, 0.15);
+}
+
+// Configuration Mode Sombre (Dark Mode)
+[data-theme='dark'], .dark {
+  --bg-app: #1a1421;
+  --bg-card: #251d2e;
+  --text-main: var(--creme);
+  --text-muted: #a095ad;
+  --border-color: rgba(251, 232, 200, 0.1);
+  --gris: #f4f4f4; // Le gris devient clair en mode sombre
+}
+
+/* -------------------------------------------------------------------------- */
+/* CLASSES UTILITAIRES DE COULEURS                                            */
+/* -------------------------------------------------------------------------- */
+
+// Textes
+.text-prune  { color: var(--prune) !important; }
+.text-corail { color: var(--corail) !important; }
+.text-creme  { color: var(--creme) !important; }
+.text-menthe { color: var(--menthe) !important; }
+.text-gris   { color: var(--gris) !important; }
+
+// Backgrounds
+.bg-prune  { background-color: var(--prune) !important; }
+.bg-corail { background-color: var(--corail) !important; }
+.bg-creme  { background-color: var(--creme) !important; }
+.bg-menthe { background-color: var(--menthe) !important; }
+.bg-gris   { background-color: var(--gris) !important; }
+
+// Backgrounds avec opacité (très utile pour les badges ou overlays)
+.bg-prune-soft  { background-color: rgba(67, 44, 88, 0.1) !important; }
+.bg-corail-soft { background-color: rgba(255, 107, 107, 0.1) !important; }
+.bg-menthe-soft { background-color: rgba(168, 219, 199, 0.1) !important; }
+
+// Borders
+.border-prune  { border: 1px solid var(--prune) !important; }
+.border-corail { border: 1px solid var(--corail) !important; }
+.border-menthe { border: 1px solid var(--menthe) !important; }
+
+/* -------------------------------------------------------------------------- */
+/* BOUTONS THEMATISÉS                                                         */
+/* -------------------------------------------------------------------------- */
+.btn-disco {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+
+  &-prune {
+    @extend .btn-disco;
+    background-color: var(--prune);
+    color: var(--white);
+    &:hover { background-color: var(--prune-light); transform: translateY(-2px); }
+  }
+
+  &-corail {
+    @extend .btn-disco;
+    background-color: var(--corail);
+    color: var(--white);
+    &:hover { filter: brightness(1.1); transform: translateY(-2px); }
+  }
+}
