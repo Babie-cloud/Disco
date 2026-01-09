@@ -1,8 +1,59 @@
 # React + Vite
+Disco is a revision planner web application built with React 19 and Vite.
+It helps students plan, organize, and track their study sessions with a modern, fast, and interactive interface.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The project uses a modern frontend stack with animations, charts, offline storage, and clean developer tooling.
 
+
+### Installation
+
+1. Clone the repository:
+Link : git clone https://github.com/your-username/disco.git
+cd disco
+
+2. Install dependencies: npm install 
+
+
+### Tech Stack
+
+1. React 19 &Vite
+2. Tailwind CSS 4
+3. React Router DOM
+4. TanStack React Query
+5. Dexie.js (IndexedDB)
+6. Font Awesome / Lucide / React Icons
+7. Husky : npm run prepare
+
+
+### Running the App
+Development mode
+Starts the Vite development server with Hot Module Replacement (HMR):
+
+'''npm run dev'''
+
+The app will be available at:
+
+http://localhost:5173
+
+
+### Production build
+
+Build the application for production:
+ '''npm run build'''
+
+
+📄 License
+
+This project is for educational and personal use.
+
+❤️ About
+
+Disco — A revision planner built to help students revise smarter, stay organized, and stay motivated.
+
+
+## Annexes
 Currently, two official plugins are available:
+
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh

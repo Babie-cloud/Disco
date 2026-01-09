@@ -1,1 +1,82 @@
 @import "tailwindcss";
+
+/* Variables CSS Disco */
+:root {
+  /* Couleurs principales */
+  --prune: #432c58;
+  --corail: #ff6b6b;
+  --creme: #fbe8c8;
+  --gris: #2d2d2d;
+  --menthe: #a8dbc7;
+
+  /* Variantes */
+  --prune-light: #5a3d75;
+  --creme-soft: #fff9f0;
+  --white: #ffffff;
+  --shadow-color: rgba(67, 44, 88, 0.1);
+  
+  /* Backgrounds soft */
+  --bg-prune-soft: rgba(67, 44, 88, 0.1);
+  --corail-soft: rgba(255, 107, 107, 0.1);
+  --menthe-soft: rgba(168, 219, 199, 0.2);
+
+  /* Thème clair */
+  --bg-app: #fff9f0;
+  --bg-card: #ffffff;
+  --text-main: #2d2d2d;
+  --text-muted: #666666;
+  --border-color: rgba(67, 44, 88, 0.15);
+}
+
+/* Reset de base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background-color: var(--bg-app);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+/* Boutons Disco */
+.btn-disco-prune {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+  background-color: var(--prune);
+  color: var(--white);
+}
+
+.btn-disco-prune:hover {
+  background-color: var(--prune-light);
+  transform: translateY(-2px);
+}
+
+.btn-disco-corail {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+  background-color: var(--corail);
+  color: var(--white);
+}
+
+.btn-disco-corail:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+}

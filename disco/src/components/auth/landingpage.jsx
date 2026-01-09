@@ -1,110 +1,380 @@
 import React from 'react';
-import { BookOpen, Calendar, CheckCircle, Clock, ArrowRight, Star } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { Calendar, CheckCircle, Clock, ArrowRight } from 'lucide-react';
 
 const LandingPage = () => {
+  const navigate = useNavigate();
+
   return (
-    <div style={{ backgroundColor: 'var(--bg-app)', color: 'var(--text-main)', minHeight: '100vh', fontFamily: 'system-ui, sans-serif' }}>
-      
-      {/* --- NAVIGATION --- */}
-      <nav style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1.5rem 10%', borderBottom: '1px solid var(--border-color)', backgroundColor: 'var(--bg-card)' }}>
-        <div style={{ fontSize: '1.5rem', fontWeight: '800', color: 'var(--prune)', display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <div style={{ backgroundColor: 'var(--corail)', width: '32px', height: '32px', borderRadius: '8px' }}></div>
+    <div style={{ 
+      backgroundColor: '#fff9f0', 
+      minHeight: '100vh',
+      padding: '0',
+      margin: '0'
+    }}>
+      {/* NAVIGATION */}
+      <nav style={{ 
+        display: 'flex', 
+        justifyContent: 'space-between', 
+        alignItems: 'center', 
+        padding: '1.5rem 5%', 
+        borderBottom: '2px solid rgba(67, 44, 88, 0.15)', 
+        backgroundColor: '#ffffff',
+        boxShadow: '0 2px 10px rgba(0,0,0,0.05)'
+      }}>
+        <div style={{ 
+          fontSize: '2rem', 
+          fontWeight: '800', 
+          color: '#432c58', 
+          display: 'flex', 
+          alignItems: 'center', 
+          gap: '12px' 
+        }}>
+          <div style={{ 
+            backgroundColor: '#ff6b6b', 
+            width: '40px', 
+            height: '40px', 
+            borderRadius: '10px' 
+          }}></div>
           DISCO
         </div>
-        <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
-          <a href="#features" style={{ textDecoration: 'none', color: 'var(--text-muted)', fontWeight: '500' }}>Fonctionnalités</a>
-          <button className="btn-disco-prune">Se connecter</button>
-        </div>
+        <button 
+          onClick={() => navigate('/login')}
+          style={{ 
+            backgroundColor: '#432c58', 
+            color: 'white', 
+            padding: '0.8rem 1.8rem', 
+            borderRadius: '12px', 
+            border: 'none', 
+            cursor: 'pointer', 
+            fontWeight: '600',
+            fontSize: '1rem'
+          }}
+        >
+          Se connecter
+        </button>
       </nav>
 
-      {/* --- HERO SECTION --- */}
-      <header style={{ padding: '5rem 10%', textAlign: 'center', maxWidth: '900px', margin: '0 auto' }}>
-        <span style={{ backgroundColor: 'var(--menthe-soft)', color: 'var(--prune)', padding: '0.5rem 1rem', borderRadius: '20px', fontSize: '0.9rem', fontWeight: 'bold' }}>
+      {/* HERO */}
+      <header style={{ 
+        padding: '4rem 5%', 
+        textAlign: 'center', 
+        maxWidth: '900px', 
+        margin: '0 auto' 
+      }}>
+        <div style={{ 
+          backgroundColor: 'rgba(168, 219, 199, 0.3)', 
+          color: '#432c58', 
+          padding: '0.6rem 1.5rem', 
+          borderRadius: '25px', 
+          fontSize: '1rem', 
+          fontWeight: '600',
+          display: 'inline-block',
+          marginBottom: '2rem'
+        }}>
           🚀 Batch 2026 : Prépare tes examens sans stress
-        </span>
-        <h1 style={{ fontSize: '3.5rem', fontWeight: '850', color: 'var(--prune)', marginTop: '1.5rem', lineHeight: '1.1' }}>
-          Dansez avec vos révisions, <span style={{ color: 'var(--corail)' }}>brillez</span> aux examens.
+        </div>
+        
+        <h1 style={{ 
+          fontSize: '3.5rem', 
+          fontWeight: '900', 
+          color: '#432c58', 
+          marginTop: '1rem', 
+          lineHeight: '1.2',
+          marginBottom: '1.5rem'
+        }}>
+          Dansez avec vos révisions, <span style={{ color: '#ff6b6b' }}>brillez</span> aux examens.
         </h1>
-        <p style={{ fontSize: '1.2rem', color: 'var(--text-muted)', marginTop: '1.5rem', lineHeight: '1.6' }}>
+        
+        <p style={{ 
+          fontSize: '1.3rem', 
+          color: '#666666', 
+          marginTop: '1.5rem', 
+          lineHeight: '1.8',
+          marginBottom: '2.5rem'
+        }}>
           Disco génère automatiquement ton planning de révisions intelligent en fonction de tes priorités et de ton rythme biologique.
         </p>
-        <div style={{ marginTop: '2.5rem', display: 'flex', gap: '1rem', justifyContent: 'center' }}>
-          <button className="btn-disco-corail" style={{ fontSize: '1.1rem', padding: '1rem 2rem' }}>
-            Commencer gratuitement <ArrowRight size={20} style={{ marginLeft: '10px' }} />
+        
+        <div style={{ 
+          marginTop: '2.5rem', 
+          display: 'flex', 
+          gap: '1rem', 
+          justifyContent: 'center',
+          flexWrap: 'wrap'
+        }}>
+          <button 
+            onClick={() => navigate('/login')}
+            style={{ 
+              backgroundColor: '#ff6b6b', 
+              color: 'white', 
+              fontSize: '1.1rem', 
+              padding: '1rem 2rem',
+              borderRadius: '12px',
+              border: 'none',
+              cursor: 'pointer',
+              fontWeight: '600',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '10px'
+            }}
+          >
+            Commencer gratuitement <ArrowRight size={20} />
           </button>
-          <button className="btn-disco-prune" style={{ fontSize: '1.1rem', padding: '1rem 2rem', backgroundColor: 'transparent', border: '2px solid var(--prune)', color: 'var(--prune)' }}>
+          <button 
+            onClick={() => navigate('/dashboard')}
+            style={{ 
+              backgroundColor: 'transparent', 
+              color: '#432c58', 
+              fontSize: '1.1rem', 
+              padding: '1rem 2rem',
+              borderRadius: '12px',
+              border: '2px solid #432c58',
+              cursor: 'pointer',
+              fontWeight: '600'
+            }}
+          >
             Voir la démo
           </button>
         </div>
       </header>
 
-      {/* --- STATS / TRUST --- */}
-      <section style={{ display: 'flex', justifyContent: 'center', gap: '4rem', padding: '2rem', backgroundColor: 'var(--bg-card)', borderY: '1px solid var(--border-color)' }}>
+      {/* STATS */}
+      <section style={{ 
+        display: 'flex', 
+        justifyContent: 'center', 
+        gap: '4rem', 
+        padding: '3rem 5%', 
+        backgroundColor: '#ffffff', 
+        borderTop: '1px solid rgba(67, 44, 88, 0.15)',
+        borderBottom: '1px solid rgba(67, 44, 88, 0.15)',
+        flexWrap: 'wrap'
+      }}>
         <div style={{ textAlign: 'center' }}>
-          <h3 style={{ color: 'var(--prune)', marginBottom: '0' }}>+15k</h3>
-          <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>Étudiants actifs</p>
+          <h3 style={{ 
+            color: '#432c58', 
+            fontSize: '2.5rem', 
+            fontWeight: '800',
+            margin: '0 0 0.5rem 0' 
+          }}>+15k</h3>
+          <p style={{ 
+            color: '#666666', 
+            fontSize: '1rem',
+            margin: 0 
+          }}>Étudiants actifs</p>
         </div>
         <div style={{ textAlign: 'center' }}>
-          <h3 style={{ color: 'var(--prune)', marginBottom: '0' }}>98%</h3>
-          <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>Objectifs atteints</p>
+          <h3 style={{ 
+            color: '#432c58', 
+            fontSize: '2.5rem', 
+            fontWeight: '800',
+            margin: '0 0 0.5rem 0' 
+          }}>98%</h3>
+          <p style={{ 
+            color: '#666666', 
+            fontSize: '1rem',
+            margin: 0 
+          }}>Objectifs atteints</p>
         </div>
         <div style={{ textAlign: 'center' }}>
-          <h3 style={{ color: 'var(--prune)', marginBottom: '0' }}>4.9/5</h3>
-          <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>Note App Store</p>
+          <h3 style={{ 
+            color: '#432c58', 
+            fontSize: '2.5rem', 
+            fontWeight: '800',
+            margin: '0 0 0.5rem 0' 
+          }}>4.9/5</h3>
+          <p style={{ 
+            color: '#666666', 
+            fontSize: '1rem',
+            margin: 0 
+          }}>Note App Store</p>
         </div>
       </section>
 
-      {/* --- FEATURES --- */}
-      <section id="features" style={{ padding: '5rem 10%' }}>
-        <h2 style={{ textAlign: 'center', color: 'var(--prune)', marginBottom: '3rem', fontSize: '2rem' }}>Pourquoi choisir Disco ?</h2>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
-          
+      {/* FEATURES */}
+      <section id="features" style={{ padding: '5rem 5%', maxWidth: '1200px', margin: '0 auto' }}>
+        <h2 style={{ 
+          textAlign: 'center', 
+          color: '#432c58', 
+          marginBottom: '3rem', 
+          fontSize: '2.5rem',
+          fontWeight: '800'
+        }}>
+          Pourquoi choisir Disco ?
+        </h2>
+        
+        <div style={{ 
+          display: 'grid', 
+          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
+          gap: '2rem' 
+        }}>
           {/* Card 1 */}
-          <div style={{ backgroundColor: 'var(--bg-card)', padding: '2rem', borderRadius: '20px', border: '1px solid var(--border-color)', boxShadow: '0 10px 30px var(--shadow-color)' }}>
-            <div style={{ backgroundColor: 'var(--corail-soft)', color: 'var(--corail)', width: '50px', height: '50px', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.5rem' }}>
-              <Calendar size={28} />
+          <div style={{ 
+            backgroundColor: '#ffffff', 
+            padding: '2rem', 
+            borderRadius: '20px', 
+            border: '1px solid rgba(67, 44, 88, 0.15)', 
+            boxShadow: '0 4px 20px rgba(67, 44, 88, 0.08)' 
+          }}>
+            <div style={{ 
+              backgroundColor: 'rgba(255, 107, 107, 0.15)', 
+              color: '#ff6b6b', 
+              width: '60px', 
+              height: '60px', 
+              borderRadius: '15px', 
+              display: 'flex', 
+              alignItems: 'center', 
+              justifyContent: 'center', 
+              marginBottom: '1.5rem' 
+            }}>
+              <Calendar size={32} />
             </div>
-            <h4 style={{ color: 'var(--prune)', fontSize: '1.2rem', marginBottom: '1rem' }}>Planning Auto-Généré</h4>
-            <p style={{ color: 'var(--text-muted)', lineHeight: '1.5' }}>Entre tes matières et tes dates d'examens, Disco s'occupe du reste. Ton temps est optimisé.</p>
+            <h4 style={{ 
+              color: '#432c58', 
+              fontSize: '1.3rem', 
+              marginBottom: '1rem',
+              fontWeight: '700'
+            }}>
+              Planning Auto-Généré
+            </h4>
+            <p style={{ 
+              color: '#666666', 
+              lineHeight: '1.6',
+              fontSize: '1rem'
+            }}>
+              Entre tes matières et tes dates d&apos;examens, Disco s&apos;occupe du reste. Ton temps est optimisé.
+            </p>
           </div>
 
           {/* Card 2 */}
-          <div style={{ backgroundColor: 'var(--bg-card)', padding: '2rem', borderRadius: '20px', border: '1px solid var(--border-color)', boxShadow: '0 10px 30px var(--shadow-color)' }}>
-            <div style={{ backgroundColor: 'var(--menthe-soft)', color: 'var(--menthe)', width: '50px', height: '50px', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.5rem' }}>
-              <Clock size={28} />
+          <div style={{ 
+            backgroundColor: '#ffffff', 
+            padding: '2rem', 
+            borderRadius: '20px', 
+            border: '1px solid rgba(67, 44, 88, 0.15)', 
+            boxShadow: '0 4px 20px rgba(67, 44, 88, 0.08)' 
+          }}>
+            <div style={{ 
+              backgroundColor: 'rgba(168, 219, 199, 0.3)', 
+              color: '#a8dbc7', 
+              width: '60px', 
+              height: '60px', 
+              borderRadius: '15px', 
+              display: 'flex', 
+              alignItems: 'center', 
+              justifyContent: 'center', 
+              marginBottom: '1.5rem' 
+            }}>
+              <Clock size={32} />
             </div>
-            <h4 style={{ color: 'var(--prune)', fontSize: '1.2rem', marginBottom: '1rem' }}>Méthode Pomodoro</h4>
-            <p style={{ color: 'var(--text-muted)', lineHeight: '1.5' }}>Chronomètre intégré avec cycles de repos pour garder un cerveau frais et disponible toute la journée.</p>
+            <h4 style={{ 
+              color: '#432c58', 
+              fontSize: '1.3rem', 
+              marginBottom: '1rem',
+              fontWeight: '700'
+            }}>
+              Méthode Pomodoro
+            </h4>
+            <p style={{ 
+              color: '#666666', 
+              lineHeight: '1.6',
+              fontSize: '1rem'
+            }}>
+              Chronomètre intégré avec cycles de repos pour garder un cerveau frais et disponible toute la journée.
+            </p>
           </div>
 
           {/* Card 3 */}
-          <div style={{ backgroundColor: 'var(--bg-prune-soft)', padding: '2rem', borderRadius: '20px', border: '1px solid var(--border-color)', boxShadow: '0 10px 30px var(--shadow-color)' }}>
-            <div style={{ backgroundColor: 'var(--white)', color: 'var(--prune)', width: '50px', height: '50px', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.5rem' }}>
-              <CheckCircle size={28} />
+          <div style={{ 
+            backgroundColor: '#ffffff', 
+            padding: '2rem', 
+            borderRadius: '20px', 
+            border: '1px solid rgba(67, 44, 88, 0.15)', 
+            boxShadow: '0 4px 20px rgba(67, 44, 88, 0.08)' 
+          }}>
+            <div style={{ 
+              backgroundColor: 'rgba(67, 44, 88, 0.15)', 
+              color: '#432c58', 
+              width: '60px', 
+              height: '60px', 
+              borderRadius: '15px', 
+              display: 'flex', 
+              alignItems: 'center', 
+              justifyContent: 'center', 
+              marginBottom: '1.5rem' 
+            }}>
+              <CheckCircle size={32} />
             </div>
-            <h4 style={{ color: 'var(--prune)', fontSize: '1.2rem', marginBottom: '1rem' }}>Suivi de Progression</h4>
-            <p style={{ color: 'var(--text-muted)', lineHeight: '1.5' }}>Visualise ton avancement en temps réel et reçois des badges de motivation pour chaque chapitre terminé.</p>
+            <h4 style={{ 
+              color: '#432c58', 
+              fontSize: '1.3rem', 
+              marginBottom: '1rem',
+              fontWeight: '700'
+            }}>
+              Suivi de Progression
+            </h4>
+            <p style={{ 
+              color: '#666666', 
+              lineHeight: '1.6',
+              fontSize: '1rem'
+            }}>
+              Visualise ton avancement en temps réel et reçois des badges de motivation pour chaque chapitre terminé.
+            </p>
           </div>
-
         </div>
       </section>
 
-      {/* --- CTA FINAL --- */}
-      <section style={{ margin: '5rem 10%', backgroundColor: 'var(--prune)', borderRadius: '30px', padding: '4rem', textAlign: 'center', color: 'var(--white)', position: 'relative', overflow: 'hidden' }}>
-        <div style={{ position: 'relative', zIndex: '2' }}>
-          <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Prêt à valider ton année ?</h2>
-          <p style={{ marginBottom: '2rem', opacity: '0.9' }}>Rejoins des milliers d'étudiants qui ont repris le contrôle sur leur temps.</p>
-          <button className="btn-disco-corail" style={{ padding: '1rem 3rem', fontSize: '1.2rem' }}>
-            Créer mon planning Disco
-          </button>
-        </div>
-        {/* Décoration subtile en arrière-plan */}
-        <div style={{ position: 'absolute', top: '-50px', right: '-50px', width: '200px', height: '200px', borderRadius: '50%', backgroundColor: 'var(--prune-light)', opacity: '0.5' }}></div>
+      {/* CTA */}
+      <section style={{ 
+        margin: '4rem 5%', 
+        backgroundColor: '#432c58', 
+        borderRadius: '30px', 
+        padding: '4rem 2rem', 
+        textAlign: 'center', 
+        color: 'white',
+        boxShadow: '0 10px 40px rgba(67, 44, 88, 0.3)'
+      }}>
+        <h2 style={{ 
+          fontSize: '2.5rem', 
+          marginBottom: '1rem',
+          fontWeight: '800'
+        }}>
+          Prêt à valider ton année ?
+        </h2>
+        <p style={{ 
+          marginBottom: '2rem', 
+          opacity: '0.95',
+          fontSize: '1.2rem'
+        }}>
+          Rejoins des milliers d&apos;étudiants qui ont repris le contrôle sur leur temps.
+        </p>
+        <button 
+          onClick={() => navigate('/login')}
+          style={{ 
+            backgroundColor: '#ff6b6b', 
+            color: 'white', 
+            padding: '1rem 3rem', 
+            fontSize: '1.2rem',
+            borderRadius: '12px',
+            border: 'none',
+            cursor: 'pointer',
+            fontWeight: '700',
+            boxShadow: '0 4px 15px rgba(255, 107, 107, 0.4)'
+          }}
+        >
+          Créer mon planning Disco
+        </button>
       </section>
 
-      {/* --- FOOTER --- */}
-      <footer style={{ padding: '3rem 10%', borderTop: '1px solid var(--border-color)', color: 'var(--text-muted)', textAlign: 'center' }}>
-        <p>© 2026 Disco App. Tous droits réservés.</p>
+      {/* FOOTER */}
+      <footer style={{ 
+        padding: '2rem 5%', 
+        borderTop: '1px solid rgba(67, 44, 88, 0.15)', 
+        color: '#666666', 
+        textAlign: 'center',
+        backgroundColor: '#ffffff'
+      }}>
+        <p style={{ margin: 0 }}>© 2026 Disco App. Tous droits réservés.</p>
       </footer>
     </div>
   );
