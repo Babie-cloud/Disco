@@ -42,13 +42,13 @@ Build the application for production:
  '''npm run build'''
 
 
-📄 License
+### License
 
 This project is for educational and personal use.
 
-❤️ About
+### About
 
-Disco — A revision planner built to help students revise smarter, stay organized, and stay motivated.
+Disco is a revision planner built to help students revise smarter, stay organized, and stay motivated.
 
 
 ## Annexes
